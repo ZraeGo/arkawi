@@ -1,14 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>my web</title>
-	<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-	<div class="flex h-screen w-full bg-black text-white">
-		<div>Hello</div>
-	</div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>my web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="min-h-screen">
+      <!-- navbar -->
+      <div
+        class="flex flex-row justify-end w-full space-x-3 p-3 md:space-x-6 md:pr-[3rem] border z-20"
+      >
+        <a class="hover:text-blue-500 cursor-pointer">
+          <div>Home</div>
+        </a>
+        <a class="hover:text-blue-500 cursor-pointer">
+          <div>About</div>
+        </a>
+        <a class="hover:text-blue-500 cursor-pointer">
+          <div>Contact</div>
+        </a>
+      </div>
+
+      <!-- sidebar -->
+      <div class="flex">
+        <div
+          class="hidden sm:flex sm:flex-row sm:absolute sm:top-3 sm:left-[3rem] sm:pt-0 sm:border-none sm:h-0 sm:space-x-8"
+        >
+		<a class="hover:text-blue-500 cursor-pointer">Beranda</a>
+		<a class="hover:text-blue-500 cursor-pointer">Aplikasi</a>
+		<a class="hover:text-blue-500 cursor-pointer">Website</a>
+		<a class="hover:text-blue-500 cursor-pointer">Game</a>
+        </div>
+        <div
+          id="Sidebar"
+          class="sm:hidden flex flex-col bg-blue-300 fixed left-0 top-0 space-y-6 overflow-x-hidden border pt-[60px] z-10 h-[100%] w-0"
+        >
+          <button
+            onclick="closeNav()"
+            class="absolute right-[25px] top-3 ml-[50px] text-3xl"
+          >
+		  &times;
+          </button>
+          <a class="pl-6 cursor-pointer">Beranda</a>
+          <a class="pl-6 cursor-pointer">Aplikasi</a>
+          <a class="pl-6 cursor-pointer">Website</a>
+          <a class="pl-6 cursor-pointer">Game</a>
+        </div>
+        <button
+          onclick="openNav()"
+          class="sm:hidden absolute space-x-3 top-2 left-3 z-1 text-3xl"
+        >
+          &#9776;
+        </button>
+      </div>
+
+      <!-- content -->
+      <main class="flex flex-row overflow-x-auto overflow-y-auto p-3 h-screen">
+        <div class="flex w-ful">
+          <h3>Hello World</h3>
+        </div>
+      </main>
+
+      <footer class="flex border p-3 justify-center">
+        <div class="flex flex-row flex-nowrap space-x-3">
+          <p>Copryght</p>
+          <p>@2023</p>
+          <p>By Arkawi</p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
 </html>
